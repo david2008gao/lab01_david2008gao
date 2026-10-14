@@ -75,7 +75,7 @@ double IntList::average() const {
     if (count() == 0) { 
         return 0.0;
     }
-    return sum() / count(); // REPLACE THIS NON-SOLUTION
+    return (1.0 * sum()) / (1.0 * count()); // REPLACE THIS NON-SOLUTION
 }
 
 // inserts value as new node at beginning of list
@@ -120,6 +120,10 @@ int IntList::count() const {
 //Assignment operator should copy the list from the source
 //to this list, deleting/replacing any existing nodes
 IntList& IntList::operator=(const IntList& source){
+    if (this == &source){
+        return *this;
+    }
+
     Node* m = head;
     while (m){
         Node* nextNode = m -> next;
